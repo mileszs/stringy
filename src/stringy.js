@@ -9,8 +9,8 @@
 // [Jasmine](http://pivotal.github.com/jasmine/), as I am already familiar with it.)
 
 // Convert a string to one with its words separated by underscores,
-// e.g. some_stupid_string
-// Expects the string to be camelized, e.g. SomeStupidString
+// e.g. `some_stupid_string`. It expects the string to be camelized,
+// e.g. `SomeStupidString`.
 String.prototype.underscore = function() {
   var upCase = new RegExp('([A-Z])','g');
   var fb = new RegExp('^_');
@@ -18,8 +18,8 @@ String.prototype.underscore = function() {
 }
 
 // Convert a string to one with each new word capitalized,
-// e.g. SomeStupidString
-// Expects the string to be underscored, e.g. some_stupid_string
+// e.g. `SomeStupidString`. It expects the string to be underscored,
+// e.g. `some_stupid_string`.
 String.prototype.camelize = function() {
   var substrings = this.split('_');
   for(var i = 0; i < substrings.length; i++) {
@@ -28,15 +28,14 @@ String.prototype.camelize = function() {
   return substrings.join('');
 }
 
-// Capitalize the first character of a string
-// Yes, it is pretty 'dumb' - just the first character
+// Capitalize the first character of a string. Yes, it is pretty
+// 'dumb' - just the first character.
 String.prototype.capitalize = function() {
   return this.slice(0,1).toUpperCase() + this.slice(1);
 }
 
 // Convert a string into one with its words separated by a dash,
-// e.g. some-stupid-string
-// Turns _any_ char not a letter into a dash!
+// e.g. `some-stupid-string`. Turns _any_ char not a letter into a dash!
 String.prototype.cssClassify = function() {
   return this.replace(/[^a-zA-Z]/g, '-').replace(/-{2,}/g, '-');
 }
